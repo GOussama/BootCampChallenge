@@ -40,8 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Coordinates.cs" />
+    <Compile Include="IBaseUnit.cs" />
+    <Compile Include="IBuildableUnit.cs" />
+    <Compile Include="IEventArgs.cs" />
+    <Compile Include="IReportingUnit.cs" />
+    <Compile Include="IStatusChangedEventArgs.cs" />
+    <Compile Include="ITestingUnit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vector.cs" />
   </ItemGroup>

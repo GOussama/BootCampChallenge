@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BotFactory.Common.Tools
 {
-    class Coordinates
+   public class Coordinates
     {
         public  Double X;
         public  Double Y;

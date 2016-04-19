@@ -33,11 +33,12 @@ namespace BotFactory.Common.Tools
         }
        
 
-        public int Length()
+        public Double Length()
         {
-            return 0;
+           Double x2 = Math.Pow(this.x, 2);
+           Double y2 = Math.Pow(this.y, 2);
+
+            return Math.Sqrt(x2 + y2); ;
         }
-
-
     }
 }
