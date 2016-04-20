@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace BotFactory.Factories
 {
-    class FactoryQueueElement
+    public class FactoryQueueElement
     {
         public string Name;
         public Type Model;
         public Coordinates ParkingPos;
         public Coordinates WorkingPos;
-        public List<FactoryQueueElement> Queue;
-        public List<ITestingUnit> Storage;
+        public static List<FactoryQueueElement> Queue;
+        public static List<ITestingUnit> Storage;
 
     }
 }

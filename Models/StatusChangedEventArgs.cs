@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BotFactory.Models
 {
-    class StatusChangedEventArgs : EventArgs
+    public class StatusChangedEventArgs : EventArgs
     {
 
 

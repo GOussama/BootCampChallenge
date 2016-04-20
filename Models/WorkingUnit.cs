@@ -17,7 +17,6 @@ namespace BotFactory.Models
         public WorkingUnit():base("002",1)
         {
 
-
         }
 
         public async Task<Boolean> WorkBegins()
