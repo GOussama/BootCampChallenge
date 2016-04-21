@@ -25,7 +25,6 @@ namespace BotFactory.Models
                 await Task.Delay(10000);
                 return true;
             }   
-
         }
 
         public async Task<Boolean> WorkEnds()
@@ -73,15 +72,19 @@ namespace BotFactory.Models
 
         public async Task<Boolean> Move(Double X, Double Y)
         {
-            await Task.Delay(10000);
 
+            double tempParcour;
+            await Task.Delay(10000);
+            if (this.CurrentPos != new Coordinates(X, Y))
+            {
+                this.CurrentPos = new Coordinates(X, Y);
+            }
             /*Double tempParc = 0;
            tempParc = this.speed / Y-X ;
            Double DelaiExec;
            Stopwatch sw = Stopwatch.StartNew();
            sw.Stop();
            DelaiExec = sw.Elapsed.TotalMilliseconds;*/
-
             return true;
         }    
     }
