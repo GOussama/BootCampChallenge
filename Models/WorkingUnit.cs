@@ -4,17 +4,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BotFactory.Common.Tools;
+using Common.Interfaces;
 
 namespace BotFactory.Models
 {
-    abstract class WorkingUnit : BaseUnit
+   public abstract class WorkingUnit : BaseUnit, IWorkingUnit
     {
 
-        Coordinates ParkingPos;
-        Coordinates WorkingPos;
-        bool IsWorking;
+        public Coordinates ParkingPos;
+        public Coordinates WorkingPos;
+        public bool IsWorking;
 
-        public WorkingUnit():base("002",1)
+        Coordinates IWorkingUnit.ParkingPos
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        Coordinates IWorkingUnit.WorkingPos
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        bool IWorkingUnit.IsWorking
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public WorkingUnit():base()
+        {
+
+        }
+
+        public WorkingUnit(double vitesse,double buildtime,string robotName,string model) : base(robotName,vitesse,buildtime)
         {
 
         }
@@ -30,7 +75,6 @@ namespace BotFactory.Models
             await Task.Delay(10000);
             return true;
         }
-
        
     }
 }

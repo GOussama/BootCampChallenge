@@ -8,8 +8,6 @@ namespace BotFactory.Models
 {
     public class EventArgs
     {
-
         public string NewStatus;
-
     }
 }

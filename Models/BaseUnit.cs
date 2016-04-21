@@ -4,38 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
-
+using BotFactory.Interface;
+using BotFactory.Common.Tools;
 
 namespace BotFactory.Models
 {
-    public abstract class BaseUnit 
+    public abstract class BaseUnit : ReportingUnit,IBaseUnit
     {
+        public Coordinates CurrentPos;
+        public string robotName;
+        public double robotSpeed;
 
-        public string CurrentPos;
-
-        public BaseUnit(string _robotName, double _robotSpeed = 1)
+        public async Task<Boolean> WorkBegins(Coordinates _WorkingPos)
         {
-            robotName = _robotName;
-            robotSpeed = _robotSpeed;
+
+            if (this.CurrentPos != _WorkingPos)
+                return false;
+
+            else {
+                await Task.Delay(10000);
+                return true;
+            }   
+
         }
 
-        public async Task<Boolean> Move(Double X, Double Y)
+        public async Task<Boolean> WorkEnds()
         {
-            await Task.Delay(10000);   
-            /*
-            Double tempParc = 0;
-            tempParc = this.speed / Y-X ;
-            Double DelaiExec;
-            Stopwatch sw = Stopwatch.StartNew();
-            sw.Stop();
-            DelaiExec = sw.Elapsed.TotalMilliseconds;
-            */
+            await Task.Delay(10000);
             return true;
         }
 
-        public string robotName;
-        public Double robotSpeed;
-               
+        public BaseUnit(string _robotName,double _robotSpeed,double buildtime):base(buildtime)
+        {
+            //this.CurrentPos = _CurrentPos;
+            this.robotName = _robotName;
+            this.robotSpeed = _robotSpeed;
+        }
+
+        public BaseUnit() : base()
+        {
+            robotSpeed = 1;
+            CurrentPos = new Coordinates(0, 0);
+        }
+
         public Double Speed
         {
             get
@@ -46,7 +57,7 @@ namespace BotFactory.Models
             {
                 robotSpeed = value;
             }
-        } 
+        }
 
         public string Name
         {
@@ -59,5 +70,19 @@ namespace BotFactory.Models
                 robotName = value;
             }
         }
+
+        public async Task<Boolean> Move(Double X, Double Y)
+        {
+            await Task.Delay(10000);
+
+            /*Double tempParc = 0;
+           tempParc = this.speed / Y-X ;
+           Double DelaiExec;
+           Stopwatch sw = Stopwatch.StartNew();
+           sw.Stop();
+           DelaiExec = sw.Elapsed.TotalMilliseconds;*/
+
+            return true;
+        }    
     }
 }

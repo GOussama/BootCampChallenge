@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-
+using Common.Interfaces;
+using BotFactory.Interface;
 
 namespace BotFactory.Models
 {
-  public class  ReportingUnit : BaseUnit
+  public abstract class ReportingUnit : BuildableUnit, IReportingUnit
     {
 
-        public ReportingUnit() : base("RG45",5)
+        int QueueFreeSlots;
+        int StorageFreeSlots;
+
+        public ReportingUnit() : base()
+        {
+        }
+
+        public ReportingUnit(double buildtime) : base(buildtime)
         {
         }
 
@@ -24,7 +31,9 @@ namespace BotFactory.Models
             //UnitStatusChanged();
         }
 
-        
-
+        public void OnStatusChanged(IStatusChangedEventArgs scea)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

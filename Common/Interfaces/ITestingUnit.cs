@@ -10,32 +10,31 @@ namespace BotFactory.Interface
     public interface ITestingUnit
     {
 
-        IBaseUnit ibu
-        {
-            get;
-            set;
-        }
+        IBaseUnit ibu { get; set; }
+
         IBuildableUnit ib
         {
             get;
+
             set;
         }
+
         IEventArgs iev
         {
             get;
             set;
         }
+
         IReportingUnit iru
         {
             get;
             set;
         }
+
         IStatusChangedEventArgs iscea
         {
             get;
             set;
         }
-
-
     }
 }

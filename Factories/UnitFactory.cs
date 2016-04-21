@@ -29,7 +29,7 @@ namespace BotFactory.Factories
             if (FactoryQueueElement.Queue.Count < StorageCapacity)
             {
 
-                if (UnitFactory.fqe.Queue.Count < QueueCapacity)
+                if (FactoryQueueElement.Queue.Count < QueueCapacity)
                 {
 
                     

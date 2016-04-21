@@ -1,0 +1,7 @@
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Models\bin\Debug\Models.dll
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Models\bin\Debug\Models.pdb
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Models\bin\Debug\Common.dll
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Models\bin\Debug\Common.pdb
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Models\obj\Debug\Models.dll
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Models\obj\Debug\Models.pdb
