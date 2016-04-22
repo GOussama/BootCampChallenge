@@ -59,21 +59,29 @@ namespace BotFactory.Models
 
         }
 
-        public WorkingUnit(double vitesse,double buildtime,string robotName,string model) : base(robotName,vitesse,buildtime)
+        public WorkingUnit(double vitesse,double buildtime,string robotName,string model,Coordinates ParkingPos,Coordinates WorkingPos) : base(robotName,vitesse,buildtime,model)
         {
 
         }
 
         public async Task<Boolean> WorkBegins()
         {
-            await Task.Delay(10000);
-            return true;
+            if (await WorkBegins(this.WorkingPos))
+            {
+                IsWorking = true; 
+                return true;
+            }
+            return false;
         }
 
         public async Task<Boolean> WorkEnds()
         {
-            await Task.Delay(10000);
-            return true;
+            if (await WorkEnds(this.ParkingPos))
+            {
+                IsWorking = false;
+                return true;
+            }
+            return false;
         }
        
     }

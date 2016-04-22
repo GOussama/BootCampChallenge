@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BotFactory.Common.Tools
 {
-    class Vector
+    public class Vector
     {
         public Double x;
         public Double y;

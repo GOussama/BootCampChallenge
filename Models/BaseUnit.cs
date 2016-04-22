@@ -17,23 +17,26 @@ namespace BotFactory.Models
 
         public async Task<Boolean> WorkBegins(Coordinates _WorkingPos)
         {
-
             if (this.CurrentPos != _WorkingPos)
-                return false;
-
-            else {
-                await Task.Delay(10000);
+            {
+                await this.Move(_WorkingPos.X,_WorkingPos.Y);
                 return true;
-            }   
+            }
+            return false;  
         }
 
-        public async Task<Boolean> WorkEnds()
+        public async Task<Boolean> WorkEnds(Coordinates _ParkingPos)
         {
-            await Task.Delay(10000);
-            return true;
+
+            if (this.CurrentPos != _ParkingPos)
+            {
+                await this.Move(_ParkingPos.X, _ParkingPos.Y);
+                return true;
+            }
+            return false;
         }
 
-        public BaseUnit(string _robotName,double _robotSpeed,double buildtime):base(buildtime)
+        public BaseUnit(string _robotName,double _robotSpeed,double buildtime,string model):base(buildtime,model)
         {
             //this.CurrentPos = _CurrentPos;
             this.robotName = _robotName;
@@ -72,19 +75,21 @@ namespace BotFactory.Models
 
         public async Task<Boolean> Move(Double X, Double Y)
         {
+            double parcourTime;
+            Vector myParcVect = Vector.FromCoordinates(new Coordinates(X, Y),this.CurrentPos);
+            parcourTime = robotSpeed * myParcVect.Length();         
+            await Task.Delay(TimeSpan.FromSeconds(parcourTime));
 
-            double tempParcour;
-            await Task.Delay(10000);
-            if (this.CurrentPos != new Coordinates(X, Y))
+            if (this.CurrentPos != new Coordinates(X,Y))
             {
-                this.CurrentPos = new Coordinates(X, Y);
+                this.CurrentPos = new Coordinates(X,Y);
             }
-            /*Double tempParc = 0;
-           tempParc = this.speed / Y-X ;
-           Double DelaiExec;
-           Stopwatch sw = Stopwatch.StartNew();
-           sw.Stop();
-           DelaiExec = sw.Elapsed.TotalMilliseconds;*/
+
+            /*Double DelaiExec;
+            Stopwatch sw = Stopwatch.StartNew();
+            sw.Stop();
+            DelaiExec = sw.Elapsed.TotalMilliseconds;*/
+
             return true;
         }    
     }

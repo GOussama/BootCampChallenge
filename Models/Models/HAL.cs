@@ -3,25 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BotFactory.Common.Tools;
 
 namespace BotFactory.Models
 {
     public class HAL : WorkingUnit
     {
-        public HAL(double vitesse, int buildtimd) : base(vitesse,buildtimd,"HAL","HAL")
+        public HAL(double vitesse, int buildtimd,string model,string name,Coordinates _ParkingPos, Coordinates _WorkingPos) : base(vitesse,buildtimd,name,model,_ParkingPos,_WorkingPos)
         {
         }
 
-        public async Task<Boolean> WorkBegins()
+
+        public async new Task<Boolean> WorkBegins()
         {
-            await Task.Delay(10000);
-            return true;
+            if(await base.WorkBegins())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public async Task<Boolean> WorkEnds()
+        public async new Task<Boolean> WorkEnds()
         {
-            await Task.Delay(10000);
-            return true;
+            if (await base.WorkBegins())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

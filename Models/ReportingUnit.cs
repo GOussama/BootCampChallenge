@@ -11,14 +11,14 @@ namespace BotFactory.Models
   public abstract class ReportingUnit : BuildableUnit, IReportingUnit
     {
 
-        int QueueFreeSlots;
-        int StorageFreeSlots;
+        public int QueueFreeSlots;
+        public int StorageFreeSlots;
 
         public ReportingUnit() : base()
         {
         }
 
-        public ReportingUnit(double buildtime) : base(buildtime)
+        public ReportingUnit(double buildtime,string model) : base(buildtime,model)
         {
         }
 
@@ -28,7 +28,7 @@ namespace BotFactory.Models
 
         public  void OnStatusChanged(StatusChangedEventArgs scea)
         {
-            //UnitStatusChanged();
+              //UnitStatusChanged();
         }
 
         public void OnStatusChanged(IStatusChangedEventArgs scea)

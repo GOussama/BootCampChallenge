@@ -18,10 +18,10 @@ namespace BotFactory.Models
         {
         }
 
-        public BuildableUnit(Double _BuildTime)
+        public BuildableUnit(Double _BuildTime,string _model)
         {
             this.BuildTime = _BuildTime;
-            //this.Model = _model;
+            this.Model = _model;
         }
 
         double IBuildableUnit.BuildTime
