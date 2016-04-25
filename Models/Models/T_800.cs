@@ -10,7 +10,7 @@ namespace BotFactory.Models
 {
     public class T_800 : WorkingUnit
     {
-        public T_800(double vitesse, int buildtimd, string model, string name, Coordinates _ParkingPos, Coordinates _WorkingPos) : base(vitesse,buildtimd,name,model,_ParkingPos,_WorkingPos)
+        public T_800(double vitesse, double buildtime, string name, Coordinates _ParkingPos, Coordinates _WorkingPos) : base(vitesse, buildtime , name,_ParkingPos,_WorkingPos)
         {
         }
 

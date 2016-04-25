@@ -11,64 +11,25 @@ namespace BotFactory.Models
    public abstract class WorkingUnit : BaseUnit, IWorkingUnit
     {
 
-        public Coordinates ParkingPos;
-        public Coordinates WorkingPos;
-        public bool IsWorking;
+        public Coordinates parkingPos;
+        public Coordinates workingPos;
+        public bool isWorking;
 
-        Coordinates IWorkingUnit.ParkingPos
+        public WorkingUnit() : base()
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
         }
 
-        Coordinates IWorkingUnit.WorkingPos
+        public WorkingUnit(double vitesse, double buildtime, string robotName, Coordinates _ParkingPos, Coordinates _WorkingPos) : base(robotName, vitesse, buildtime)
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        bool IWorkingUnit.IsWorking
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public WorkingUnit():base()
-        {
-
-        }
-
-        public WorkingUnit(double vitesse,double buildtime,string robotName,string model,Coordinates ParkingPos,Coordinates WorkingPos) : base(robotName,vitesse,buildtime,model)
-        {
-
+            parkingPos = _ParkingPos;
+            workingPos = _WorkingPos;
         }
 
         public async Task<Boolean> WorkBegins()
         {
-            if (await WorkBegins(this.WorkingPos))
+            if (await WorkBegins(this.workingPos))
             {
-                IsWorking = true; 
+                isWorking = true;
                 return true;
             }
             return false;
@@ -76,13 +37,50 @@ namespace BotFactory.Models
 
         public async Task<Boolean> WorkEnds()
         {
-            if (await WorkEnds(this.ParkingPos))
+            if (await WorkEnds(this.parkingPos))
             {
-                IsWorking = false;
+                isWorking = false;
                 return true;
             }
             return false;
         }
-       
+
+        Coordinates IWorkingUnit.ParkingPos
+        {
+            get
+            {
+                return parkingPos;
+            }
+            set
+            {
+                parkingPos = value;
+            }
+        }
+
+
+        Coordinates IWorkingUnit.WorkingPos
+        {
+            get
+            {
+                return workingPos;
+            }
+            set
+            {
+                workingPos = value;
+            }
+        }
+
+
+        bool IWorkingUnit.IsWorking
+        {
+            get
+            {
+                return isWorking;
+            }
+            set
+            {
+                isWorking = value;
+            }
+        } 
     }
 }

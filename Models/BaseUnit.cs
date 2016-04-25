@@ -20,6 +20,7 @@ namespace BotFactory.Models
             if (this.CurrentPos != _WorkingPos)
             {
                 await this.Move(_WorkingPos.X,_WorkingPos.Y);
+                this.CurrentPos = _WorkingPos;
                 return true;
             }
             return false;  
@@ -31,12 +32,13 @@ namespace BotFactory.Models
             if (this.CurrentPos != _ParkingPos)
             {
                 await this.Move(_ParkingPos.X, _ParkingPos.Y);
+                this.CurrentPos = _ParkingPos;
                 return true;
             }
             return false;
         }
 
-        public BaseUnit(string _robotName,double _robotSpeed,double buildtime,string model):base(buildtime,model)
+        public BaseUnit(string _robotName,double _robotSpeed,double buildtime):base(buildtime)
         {
             //this.CurrentPos = _CurrentPos;
             this.robotName = _robotName;

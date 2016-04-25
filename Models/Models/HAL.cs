@@ -9,10 +9,9 @@ namespace BotFactory.Models
 {
     public class HAL : WorkingUnit
     {
-        public HAL(double vitesse, int buildtimd,string model,string name,Coordinates _ParkingPos, Coordinates _WorkingPos) : base(vitesse,buildtimd,name,model,_ParkingPos,_WorkingPos)
+        public HAL(double vitesse, double buildtime,string name,Coordinates _ParkingPos, Coordinates _WorkingPos) : base(vitesse,buildtime,name,_ParkingPos,_WorkingPos)
         {
         }
-
 
         public async new Task<Boolean> WorkBegins()
         {
@@ -37,5 +36,6 @@ namespace BotFactory.Models
                 return false;
             }
         }
+
     }
 }

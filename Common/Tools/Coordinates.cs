@@ -16,32 +16,6 @@ namespace BotFactory.Common.Tools
             X = _X;
             Y = _Y;
         }
-    
-        /*
-        public Double X
-        {
-            get
-            {
-                return x;
-            }
-            set
-            {
-                x = value;
-            }
-        }
-
-         public Double Y
-        {
-            get
-            {
-                return y;
-            }
-            set
-            {
-                y = value;
-            }
-        }
-        */
 
         public override bool Equals(System.Object obj)
         {

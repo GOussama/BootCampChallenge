@@ -14,8 +14,7 @@ namespace BotFactory.Factories
         public Type Model;
         public Coordinates ParkingPos;
         public Coordinates WorkingPos;
-        public static List<FactoryQueueElement> Queue;
-        public static List<ITestingUnit> Storage;
+        
 
     }
 }

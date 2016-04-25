@@ -11,42 +11,45 @@ namespace BotFactory.Models
     public abstract class BuildableUnit : IBuildableUnit
     {
 
-        public double BuildTime = 5;
-        public string Model;
+        public double buildTime = 5;
+        public string model;
+      
 
         public BuildableUnit()
         {
         }
 
-        public BuildableUnit(Double _BuildTime,string _model)
+        public BuildableUnit(Double _BuildTime)
         {
-            this.BuildTime = _BuildTime;
-            this.Model = _model;
+            this.buildTime = _BuildTime;
+            this.model = this.GetType().Name;
         }
+
 
         double IBuildableUnit.BuildTime
         {
             get
             {
-                throw new NotImplementedException();
+                return buildTime;
             }
 
             set
             {
-                throw new NotImplementedException();
+                 buildTime = value;
             }
         }
+
 
         string IBuildableUnit.Model
         {
             get
             {
-                throw new NotImplementedException();
+                return model;
             }
 
             set
             {
-                throw new NotImplementedException();
+                value = model;
             }
         }
     }

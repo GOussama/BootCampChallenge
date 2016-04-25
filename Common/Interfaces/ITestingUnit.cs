@@ -15,7 +15,6 @@ namespace BotFactory.Interface
         IBuildableUnit ib
         {
             get;
-
             set;
         }
 

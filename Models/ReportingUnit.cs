@@ -18,7 +18,7 @@ namespace BotFactory.Models
         {
         }
 
-        public ReportingUnit(double buildtime,string model) : base(buildtime,model)
+        public ReportingUnit(double buildtime) : base(buildtime)
         {
         }
 
@@ -26,10 +26,6 @@ namespace BotFactory.Models
         {
         }
 
-        public  void OnStatusChanged(StatusChangedEventArgs scea)
-        {
-              //UnitStatusChanged();
-        }
 
         public void OnStatusChanged(IStatusChangedEventArgs scea)
         {

@@ -5,37 +5,52 @@ using System.Text;
 using System.Threading.Tasks;
 using BotFactory.Common.Tools;
 using BotFactory.Models;
+using BotFactory.Interface;
 
 namespace BotFactory.Factories
 {
     public class UnitFactory
     {
-        public int QueueCapacity;
-        public int StorageCapacity;
-       
+        public int queueCapacity;
+        public int storageCapacity;
+        public static List<FactoryQueueElement> Queue = new List<FactoryQueueElement>();
+        public static List<ITestingUnit> Storage = new List<ITestingUnit>();
+
         public UnitFactory(int _QueueCapacity,int _StorageCapacity)
         {
-            QueueCapacity = _QueueCapacity;
-            StorageCapacity = _StorageCapacity;
+            queueCapacity = _QueueCapacity;
+            storageCapacity = _StorageCapacity;
         }
 
         public UnitFactory()
         {
-
         }
 
-        public void AddWorkableUnitToQueue(string model, string name, Coordinates parkingPos,
+        public void ConstructingUnitAndAddToStorage(double buildTime)
+        {
+
+            foreach( var unit in Queue)
+            {
+                 
+            }
+                
+        }
+        public void AddWorkableUnitToQueue(Type model, string name, Coordinates parkingPos,
         Coordinates workingPos)
         {
-             //FactoryQueueElement fqe = new FactoryQueueElement();
+            FactoryQueueElement nesfqe = new FactoryQueueElement();
 
-            if (FactoryQueueElement.Queue.Count < StorageCapacity)
-            {
-                if (FactoryQueueElement.Queue.Count < QueueCapacity)
+            nesfqe.Model = model;
+            nesfqe.Name = name;
+            nesfqe.ParkingPos = parkingPos;
+            nesfqe.WorkingPos = workingPos;
+
+                if (Queue.Count < queueCapacity)
                 {
-                    
+                    Queue.Add(nesfqe);
                 }
-            }
+            
         }
+
     }
 }

@@ -10,7 +10,7 @@ namespace BotFactory.Models
 {
     public class Wall_E : WorkingUnit
     {
-        public Wall_E(double vitesse, int buildtimd, string model, string name,Coordinates _ParkingPos,Coordinates _WorkingPos) : base(vitesse,buildtimd,name,model,_ParkingPos,_WorkingPos)
+        public Wall_E(double vitesse, double buildtimd, string name,Coordinates _ParkingPos,Coordinates _WorkingPos) : base(vitesse,buildtimd,name,_ParkingPos,_WorkingPos)
         {
         }
 
