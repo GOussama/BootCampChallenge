@@ -10,11 +10,23 @@ namespace BotFactory.Factories
 {
     public class FactoryQueueElement
     {
+
         public string Name;
         public Type Model;
         public Coordinates ParkingPos;
         public Coordinates WorkingPos;
+
+        public FactoryQueueElement()
+        {
+        }
         
+        public FactoryQueueElement(string _Name,Type _Model,Coordinates _ParkingPos,Coordinates _WorkingPos)
+        {
+            Name = _Name;
+            Model = _Model;
+            ParkingPos = _ParkingPos;
+            WorkingPos = _WorkingPos;
+        }
 
     }
 }

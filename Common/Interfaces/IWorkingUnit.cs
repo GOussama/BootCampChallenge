@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using BotFactory.Common.Tools;
 
 
-namespace Common.Interfaces
+namespace BotFactory.Interface
 {
    public interface IWorkingUnit
     {

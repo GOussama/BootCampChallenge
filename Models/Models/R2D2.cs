@@ -14,6 +14,10 @@ namespace BotFactory.Models
         {
         }
 
+        public R2D2()
+        {
+        }
+
         public async new Task<Boolean> WorkBegins()
         {
             if (await base.WorkBegins())

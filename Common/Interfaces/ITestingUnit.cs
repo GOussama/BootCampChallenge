@@ -7,33 +7,9 @@ using System.Threading.Tasks;
 
 namespace BotFactory.Interface
 {
-    public interface ITestingUnit
+    public interface ITestingUnit : IBaseUnit,IBuildableUnit,IWorkingUnit
     {
 
-        IBaseUnit ibu { get; set; }
-
-        IBuildableUnit ib
-        {
-            get;
-            set;
-        }
-
-        IEventArgs iev
-        {
-            get;
-            set;
-        }
-
-        IReportingUnit iru
-        {
-            get;
-            set;
-        }
-
-        IStatusChangedEventArgs iscea
-        {
-            get;
-            set;
-        }
+        
     }
 }

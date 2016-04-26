@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Test
 {
@@ -29,11 +30,12 @@ namespace Test
             unitFactory.AddWorkableUnitToQueue(t80001.GetType(), t80001.Name, hal01.parkingPos, t80001.workingPos);
             unitFactory.AddWorkableUnitToQueue(walle01.GetType(), walle01.Name, walle01.parkingPos, walle01.workingPos);
 
+            Thread ConstructingThread = new Thread(unitFactory.ConstructingUnitAndAddToStorage);
+            ConstructingThread.Start();
 
+            //UnitFactory final = unitFactory;
 
-
-
-
+         
 
 
         }

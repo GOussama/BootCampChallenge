@@ -14,6 +14,11 @@ namespace BotFactory.Models
         {
         }
 
+        public T_800()
+        {
+
+        }
+
         public async new Task<Boolean> WorkBegins()
         {
             if (await base.WorkBegins())

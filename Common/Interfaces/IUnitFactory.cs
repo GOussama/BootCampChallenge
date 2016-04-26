@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using BotFactory.Common.Tools;
 
-namespace Common
+namespace BotFactory.Interface
 {
-    interface IUnitFactory
+   public interface IUnitFactory
     {
-        void AddWorkableUnitToQueue(string model, string name, Coordinates parkingPos,
-        Coordinates workingPos);
+        
     }
 }

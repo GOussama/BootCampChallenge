@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BotFactory.Common.Tools;
-using Common.Interfaces;
+using BotFactory.Interface;
 
 namespace BotFactory.Models
 {

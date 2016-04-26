@@ -50,6 +50,7 @@
     <Compile Include="StatusChangedEventArgs.cs" />
     <Compile Include="Models\T_800.cs" />
     <Compile Include="Models\Wall_E.cs" />
+    <Compile Include="TestingUnit.cs" />
     <Compile Include="WorkingUnit.cs" />
   </ItemGroup>
   <ItemGroup>

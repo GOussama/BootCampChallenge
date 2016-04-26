@@ -14,6 +14,10 @@ namespace BotFactory.Models
         {
         }
 
+        public Wall_E()
+        {
+
+        }
         public async new Task<Boolean> WorkBegins()
         {
             if (await base.WorkBegins())
