@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IFactoryQueueElement.cs" />
     <Compile Include="Interfaces\IWorkingUnit.cs" />
     <Compile Include="Tools\Coordinates.cs" />
     <Compile Include="Interfaces\IBaseUnit.cs" />

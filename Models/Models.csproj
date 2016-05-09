@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="BaseUnit.cs" />
     <Compile Include="BuildableUnit .cs" />
-    <Compile Include="EventArgs.cs" />
     <Compile Include="Models\HAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\R2D2.cs" />

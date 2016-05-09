@@ -32,7 +32,6 @@ namespace BotFactory.Models
             speed = _speed;
             parkingPos = _parkingPos;
             workingPos = _workingPos;
-
         }
 
         public double BuildTime

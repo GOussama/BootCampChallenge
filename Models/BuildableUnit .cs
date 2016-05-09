@@ -12,8 +12,7 @@ namespace BotFactory.Models
     {
 
         public double buildTime = 5;
-        public string model;
-      
+        public string model;   
 
         public BuildableUnit()
         {
@@ -26,7 +25,7 @@ namespace BotFactory.Models
         }
 
 
-        double IBuildableUnit.BuildTime
+        public double BuildTime
         {
             get
             {
@@ -40,7 +39,7 @@ namespace BotFactory.Models
         }
 
 
-        string IBuildableUnit.Model
+        public string Model
         {
             get
             {

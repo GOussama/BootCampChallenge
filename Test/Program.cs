@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using BotFactory.Interface;
 
 namespace Test
 {
@@ -34,10 +35,10 @@ namespace Test
             ConstructingThread.Start();
 
             //UnitFactory final = unitFactory;
+            R2D2 unit = new R2D2(1, 1, "R2D2", new Coordinates(0, 0), new Coordinates(5, 5));
+            unit.WorkBegins();
 
-         
-
-
+            Console.ReadKey();
         }
     }
 }

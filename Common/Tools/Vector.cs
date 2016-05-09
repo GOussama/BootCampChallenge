@@ -12,22 +12,25 @@ namespace BotFactory.Common.Tools
         public Double x;
         public Double y;
 
+        public Double X { get; set; }
+        public Double Y { get; set; }
+
         public Vector()
         {
         }
 
-        public Vector(Double _x, Double _y)
+        public Vector(Double x, Double y)
         {
-            x = _x;
-            y = _y;
+            X = x;
+            Y = y;
         }
 
         public static Vector FromCoordinates(Coordinates begin, Coordinates end)
         {
 
             Vector v = new Vector();
-            v.x = end.X - begin.X;
-            v.y = end.Y - begin.Y;
+            v.X = end.X - begin.X;
+            v.Y = end.Y - begin.Y;
 
             return v;
         }

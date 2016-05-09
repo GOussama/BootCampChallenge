@@ -16,7 +16,6 @@ namespace BotFactory.Models
 
         public T_800()
         {
-
         }
 
         public async new Task<Boolean> WorkBegins()
@@ -30,6 +29,7 @@ namespace BotFactory.Models
                 return false;
             }
         }
+
 
         public async new Task<Boolean> WorkEnds()
         {

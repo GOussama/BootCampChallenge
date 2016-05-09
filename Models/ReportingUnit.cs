@@ -21,14 +21,11 @@ namespace BotFactory.Models
         {
         }
 
-        public  void UnitStatusChanged()
-        {
-        }
+        public event EventHandler UnitStatusChanged;
 
-
-        public void OnStatusChanged(IStatusChangedEventArgs scea)
+        public virtual void OnStatusChanged(IStatusChangedEventArgs scea)
         {
-            throw new NotImplementedException();
+            UnitStatusChanged.Invoke(this, (StatusChangedEventArgs)scea);
         }
     }
 }
