@@ -14,68 +14,90 @@ namespace BotFactory.Factories
     public class UnitFactory : ReportingFactory
     {
 
-        public int queueCapacity;
-        public int storageCapacity;
-        public static List<FactoryQueueElement> Queue = new List<FactoryQueueElement>();
-        public static List<ITestingUnit> Storage = new List<ITestingUnit>();
+        private int queueCapacity;
+        private int storageCapacity;
+        public  List<FactoryQueueElement> queue;
+        public  List<ITestingUnit> storage;
 
-        public UnitFactory(int _QueueCapacity, int _StorageCapacity)
+        public List<FactoryQueueElement> Queue
+        {
+            get
+            {
+                return queue;
+            }
+            set
+            {
+                value = queue;
+            }
+        }
+
+        public List<ITestingUnit> Storage
+        {
+            get
+            {
+                return storage;
+            }
+            set
+            {
+                value = storage;
+            }
+        }
+
+
+        public UnitFactory(int _QueueCapacity, int _StorageCapacity )
         {
             queueCapacity = _QueueCapacity;
             storageCapacity = _StorageCapacity;
+            queue = new List<FactoryQueueElement>();
+            storage = new List<ITestingUnit>();
+
         }
 
         public UnitFactory()
         {
         }
 
-        public override void OnStatusChanged(IStatusChangedEventArgs scea)
+        private void ConstructingUnitAndAddToStorage()
         {
-            base.OnStatusChanged(scea);
-
-        }
-
-        public void ConstructingUnitAndAddToStorage()
-        {
-
             Console.Write("Construction en cours");
-            OnStatusChanged(new StatusChangedEventArgs("Starting construction of robots", Queue[0], null));
+            OnStatusChanged(new StatusChangedEventArgs("Starting construction of robots", queue[0], null));
 
-            if (Storage.Count < Storage.Capacity) {
-
-                while (Queue.Count != 0)
+            if (storage.Count < storage.Capacity)
+            {
+                var thread = new Thread(() =>
                 {
-                    var thread = new Thread(() =>
+                    while (queue.Count != 0)
                     {
+                        Object activ = Activator.CreateInstance(queue[0].Model);
 
-                        Object activ = Activator.CreateInstance(Queue[0].Model);
-
-                        double _buildTime = ((WorkingUnit)activ).buildTime;
+                        double _buildTime = ((WorkingUnit)activ).BuildTime;
                         bool _isWorking = ((WorkingUnit)activ).isWorking;
-                        string _model = Queue[0].Model.Name;
-                        string _name = Queue[0].Name;
+                        string _model = queue[0].Model.Name;
+                        string _name = queue[0].Name;
                         double _speed = ((WorkingUnit)activ).Speed;
 
-                        Coordinates _parkingPos = Queue[0].ParkingPos;
-                        Coordinates _workingPos = Queue[0].WorkingPos;
+                        Coordinates _parkingPos = queue[0].ParkingPos;
+                        Coordinates _workingPos = queue[0].WorkingPos;
 
                         Console.WriteLine("Construction of the thread..., it takes :" + _buildTime);
                         Thread.Sleep(TimeSpan.FromSeconds(_buildTime));
+
                         Console.WriteLine("End of construction");
                         TestingUnit unit = new TestingUnit(_buildTime, _isWorking, _model, _name, _speed, _parkingPos, _workingPos);
 
                         Console.WriteLine("Adding unit to storage");
-                        Storage.Add(unit);
+                        storage.Add(unit);
+
                         Console.WriteLine("Unit " + unit.name + " added to storage");
+                        queue.Remove(queue[0]);
 
-                        Queue.Remove(Queue[0]);
-                        OnStatusChanged(new StatusChangedEventArgs("Starting construction of robots",null, unit));
+                        OnStatusChanged(new StatusChangedEventArgs("Starting construction of robots", null, unit));
 
-                    });
+                    }
+                });
 
-                    thread.Start();
-                }
-                OnStatusChanged(new StatusChangedEventArgs("Construction of robots is done", Queue[0], null));
+                thread.Start();
+                OnStatusChanged(new StatusChangedEventArgs("Construction of robots is done", queue[0], null));
                 Console.Write("End of construction");
             }
 
@@ -84,28 +106,33 @@ namespace BotFactory.Factories
                 Console.Write("We cannot add any robot storage is full");
             }
 
-            
         }
 
         public void AddWorkableUnitToQueue(Type model, string name, Coordinates parkingPos,
         Coordinates workingPos)
         {
-            FactoryQueueElement nesfqe = new FactoryQueueElement();
+            FactoryQueueElement nesfqe = new FactoryQueueElement();            
 
             nesfqe.Model = model;
             nesfqe.Name = name;
             nesfqe.ParkingPos = parkingPos;
             nesfqe.WorkingPos = workingPos;
 
-            if (Queue.Count < queueCapacity && Storage.Count < storageCapacity)
-            {
-                Queue.Add(nesfqe);
-                Console.WriteLine("L'unité est ajouté à la queue");
-            }
-            else
-            {
-                Console.WriteLine("L'unité ne peut pas être ajouté car il ne reste plus de place");
-            }
+         //   if(storage != null && queue != null) { 
+
+                if (queue.Count < queueCapacity && storage.Count < storageCapacity)
+                {
+                    queue.Add(nesfqe);
+                    Console.WriteLine("L'unité est ajouté à la queue");
+                    ConstructingUnitAndAddToStorage();
+                }
+
+                else
+                {
+                    Console.WriteLine("L'unité ne peut pas être ajouté car il ne reste plus de place");
+                }
+
+           // }
 
         }
 

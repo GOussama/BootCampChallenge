@@ -9,7 +9,7 @@ using BotFactory.Common.Tools;
 
 namespace BotFactory.Models
 {
-    public abstract class BaseUnit : ReportingUnit,IBaseUnit
+    public abstract class BaseUnit : ReportingUnit, IBaseUnit
     {
 
         public Coordinates CurrentPos;
@@ -17,40 +17,55 @@ namespace BotFactory.Models
         public double robotSpeed;
 
         public async Task<Boolean> WorkBegins(Coordinates _WorkingPos)
-        {
+        {          
             if (this.CurrentPos != _WorkingPos)
             {
-                Console.WriteLine($"{DateTime.UtcNow} : Avant move");
-                StatusChangedEventArgs scea = new StatusChangedEventArgs();
+                Console.WriteLine($"{DateTime.UtcNow} : Before moving");
+
+                StatusChangedEventArgs scea_m = new StatusChangedEventArgs();
+                scea_m.newStatus = "Moving to the working place";
 
                 await this.Move(_WorkingPos.X,_WorkingPos.Y);
-                Console.WriteLine($"{DateTime.UtcNow} : Apres move");
+
+                Console.WriteLine($"{DateTime.UtcNow} : After moving");
+
                 this.CurrentPos = _WorkingPos;
+
+                StatusChangedEventArgs scea_a = new StatusChangedEventArgs();
+                scea_a.newStatus = "Arriving to the working place";
+
                 return true;
             }
-            return false;  
+            return false; 
         }
 
-        public override void OnStatusChanged(IStatusChangedEventArgs pscea)
-        {
-            base.OnStatusChanged(pscea);
-        }
-
+      
         public async Task<Boolean> WorkEnds(Coordinates _ParkingPos)
         {
-
             if (this.CurrentPos != _ParkingPos)
             {
+                Console.WriteLine($"{DateTime.UtcNow} : Before moving");
+
+                StatusChangedEventArgs scea_m = new StatusChangedEventArgs();
+                scea_m.newStatus = "Moving to the parking place";
+
                 await this.Move(_ParkingPos.X, _ParkingPos.Y);
+                Console.WriteLine($"{DateTime.UtcNow} : After moving");
+
                 this.CurrentPos = _ParkingPos;
+
+                StatusChangedEventArgs scea_a = new StatusChangedEventArgs();
+                scea_a.newStatus = "Arriving to the parking place";
+
                 return true;
             }
+
             return false;
         }
 
         public BaseUnit(string _robotName,double _robotSpeed,double buildtime):base(buildtime)
         {
-            //this.CurrentPos = _CurrentPos;
+           
             this.robotName = _robotName;
             this.robotSpeed = _robotSpeed;
         }
@@ -87,20 +102,23 @@ namespace BotFactory.Models
 
         public async Task<Boolean> Move(Double X, Double Y)
         {
+
             Coordinates c = new Coordinates(X, Y);
+
             if (this.CurrentPos != c)
             {
                 double parcourTime;
                 Vector myParcVect = Vector.FromCoordinates(c, this.CurrentPos);
                 parcourTime = robotSpeed * myParcVect.Length();
-                Console.WriteLine($"{DateTime.UtcNow} : Avant delay");
+                Console.WriteLine($"{DateTime.UtcNow} :  before delay");
                 await Task.Delay(TimeSpan.FromSeconds(parcourTime));
-                Console.WriteLine($"{DateTime.UtcNow} : Apres delay");
+                Console.WriteLine($"{DateTime.UtcNow} :  after delay");
                 this.CurrentPos = new Coordinates(X,Y);
-
                 return true;
             }
+
             return false;
+
             /*Double DelaiExec;
             Stopwatch sw = Stopwatch.StartNew();
             sw.Stop();

@@ -12,14 +12,15 @@ namespace BotFactory.Models
         public HAL(double vitesse, double buildtime,string name,Coordinates _ParkingPos, Coordinates _WorkingPos) : base(vitesse,buildtime,name,_ParkingPos,_WorkingPos)
         {
         }
+
         public HAL()
         {
-
         }
+
         public async new Task<Boolean> WorkBegins()
         {
             if(await base.WorkBegins())
-            {
+            {          
                 return true;
             }
             else

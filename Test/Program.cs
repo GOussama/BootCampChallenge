@@ -31,14 +31,6 @@ namespace Test
             unitFactory.AddWorkableUnitToQueue(t80001.GetType(), t80001.Name, hal01.parkingPos, t80001.workingPos);
             unitFactory.AddWorkableUnitToQueue(walle01.GetType(), walle01.Name, walle01.parkingPos, walle01.workingPos);
 
-            Thread ConstructingThread = new Thread(unitFactory.ConstructingUnitAndAddToStorage);
-            ConstructingThread.Start();
-
-            //UnitFactory final = unitFactory;
-            R2D2 unit = new R2D2(1, 1, "R2D2", new Coordinates(0, 0), new Coordinates(5, 5));
-            unit.WorkBegins();
-
-            Console.ReadKey();
         }
     }
 }

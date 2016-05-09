@@ -11,8 +11,8 @@ namespace BotFactory.Models
     public abstract class BuildableUnit : IBuildableUnit
     {
 
-        public double buildTime = 5;
-        public string model;   
+        private double buildTime = 5;
+        private string model;   
 
         public BuildableUnit()
         {
