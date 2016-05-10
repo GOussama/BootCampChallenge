@@ -45,7 +45,7 @@ namespace BotFactory.Models
             return false;
         }
 
-        Coordinates IWorkingUnit.ParkingPos
+        public Coordinates ParkingPos
         {
             get
             {
@@ -58,7 +58,7 @@ namespace BotFactory.Models
         }
 
 
-        Coordinates IWorkingUnit.WorkingPos
+        public Coordinates WorkingPos
         {
             get
             {
@@ -71,7 +71,7 @@ namespace BotFactory.Models
         }
 
 
-        bool IWorkingUnit.IsWorking
+       public bool IsWorking
         {
             get
             {

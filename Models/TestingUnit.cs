@@ -43,7 +43,7 @@ namespace BotFactory.Models
 
             set
             {
-                value = buildTime;
+                buildTime = value;
             }
         }
 
@@ -69,7 +69,7 @@ namespace BotFactory.Models
 
             set
             {
-                value = model;
+                model = value;
             }
         }
 
@@ -95,7 +95,7 @@ namespace BotFactory.Models
 
             set
             {
-                value = parkingPos;
+                parkingPos = value;
             }
         }
 
@@ -121,7 +121,7 @@ namespace BotFactory.Models
 
             set
             {
-                value = workingPos;
+                workingPos = value;
             }
         }
     }

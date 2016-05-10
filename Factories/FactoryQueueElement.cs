@@ -26,7 +26,7 @@ namespace BotFactory.Factories
 
             set
             {
-                value = name;
+                name = value;
             }
         }
 
@@ -39,7 +39,7 @@ namespace BotFactory.Factories
 
             set
             {
-                value = model;
+                model = value;
             }
         }
 
@@ -52,7 +52,7 @@ namespace BotFactory.Factories
 
             set
             {
-                value = parkingPos;
+                parkingPos = value;
             }
         }
 
@@ -65,7 +65,7 @@ namespace BotFactory.Factories
 
             set
             {
-                value = workingPos;
+                workingPos = value;
             }
         }
 

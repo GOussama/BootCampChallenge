@@ -10,8 +10,33 @@ namespace BotFactory.Models
   public abstract class ReportingUnit : BuildableUnit, IReportingUnit
     {
 
-        public int QueueFreeSlots;
-        public int StorageFreeSlots;
+        private int queueFreeSlots;
+        private int storageFreeSlots;
+
+
+        public int QueueFreeSlots
+        {
+            get
+            {
+                return queueFreeSlots;
+            }
+            set
+            {
+                value = queueFreeSlots;
+            }
+        }
+
+        public int StorageFreeSlots
+        {
+            get
+            {
+                return storageFreeSlots;
+            }
+            set
+            {
+                value = storageFreeSlots;
+            }
+        }
 
         public ReportingUnit() : base()
         {

@@ -36,7 +36,7 @@ namespace BotFactory.Models
 
             set
             {
-                value = newStatus;
+                newStatus = value;
             }
         }
 

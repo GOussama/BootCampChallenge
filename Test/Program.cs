@@ -15,14 +15,13 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            int QueueCapacity = 10;
+            int StorageCapacity = 15;
 
             HAL hal01 = new HAL(0.5,7,"hal01",new Coordinates(0,0),new Coordinates(5,5));
             R2D2 r2d201 = new R2D2(1.5,5.5,"r2d201",new Coordinates(0,0),new Coordinates(5,5));
             T_800 t80001 = new T_800(3,10,"t80001",new Coordinates(0,0),new Coordinates(5,5));
             Wall_E walle01 = new Wall_E(2,4,"walle01",new Coordinates(0,0),new Coordinates(5,5));
-
-            int QueueCapacity = 10;
-            int StorageCapacity = 15;
 
             UnitFactory unitFactory = new UnitFactory(QueueCapacity,StorageCapacity);
 

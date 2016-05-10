@@ -15,14 +15,16 @@ namespace BotFactory.Factories
 
         public virtual void OnStatusChanged(IStatusChangedEventArgs scea)
         {
-            //UnitStatusChanged.Invoke(this,(StatusChangedEventArgs) scea);
-            
+            UnitStatusChanged.Invoke(this,(StatusChangedEventArgs) scea);      
             Console.Write("Now we " + scea.NewStatus); 
         }
 
+        /*
         public ReportingFactory()
         {
+            UnitStatusChanged+=
         }
+        */
 
     }
 }
