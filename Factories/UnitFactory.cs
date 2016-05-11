@@ -16,8 +16,10 @@ namespace BotFactory.Factories
 
         private int queueCapacity;
         private int storageCapacity;
-        public  List<FactoryQueueElement> queue;
-        public  List<ITestingUnit> storage;
+        public List<FactoryQueueElement> queue;
+        public List<ITestingUnit> storage;
+
+        private Object thisLock = new Object();
 
         public List<FactoryQueueElement> Queue
         {
@@ -43,8 +45,7 @@ namespace BotFactory.Factories
             }
         }
 
-
-        public UnitFactory(int _QueueCapacity, int _StorageCapacity )
+        public UnitFactory(int _QueueCapacity, int _StorageCapacity)
         {
             queueCapacity = _QueueCapacity;
             storageCapacity = _StorageCapacity;
@@ -58,116 +59,126 @@ namespace BotFactory.Factories
 
         private void constructionThread()
         {
-            while (queue.Count != 0)
+            lock (thisLock)
             {
-
-                Object activ = Activator.CreateInstance(queue[0].Model);
-
-                double _buildTime = ((WorkingUnit)activ).BuildTime;
-                bool _isWorking = ((WorkingUnit)activ).isWorking;
-                string _model = queue[0].Model.Name;
-                string _name = queue[0].Name;
-                double _speed = ((WorkingUnit)activ).Speed;
-
-                Coordinates _parkingPos = queue[0].ParkingPos;
-                Coordinates _workingPos = queue[0].WorkingPos;
-
-                Console.WriteLine("Construction of the thread..., it takes :" + _buildTime);
-                Thread.Sleep(TimeSpan.FromSeconds(_buildTime));
-
-                Console.WriteLine("End of construction");
-                TestingUnit unit = new TestingUnit(_buildTime, _isWorking, _model, _name, _speed, _parkingPos, _workingPos);
-
-                Console.WriteLine("Adding unit to storage");
-                storage.Add(unit);
-
-                Console.WriteLine("Unit " + unit.name + " added to storage");
-                queue.Remove(queue[0]);
-              
-            }
-        }
-
-/*
-        private void ConstructingUnitAndAddToStorage()
-        {
-
-            Console.Write("Construction en cours");
-            //OnStatusChanged(new StatusChangedEventArgs("Starting construction of robots", queue[0], null));
-            if (storage.Count < queueCapacity)
-            {
-                Thread thread = new Thread(() =>
+                int lastElementIndex = queue.Count - 1;
+                while (queue.Count != 0)
                 {
-                    while (queue.Count != 0)
-                    {
-                        Object activ = Activator.CreateInstance(queue[0].Model);
+                    Object activ = Activator.CreateInstance(queue[0].Model);
 
-                        double _buildTime = ((WorkingUnit)activ).BuildTime;
-                        bool _isWorking = ((WorkingUnit)activ).isWorking;
-                        string _model = queue[0].Model.Name;
-                        string _name = queue[0].Name;
-                        double _speed = ((WorkingUnit)activ).Speed;
+                    double _buildTime = ((WorkingUnit)activ).BuildTime;
+                    bool _isWorking = ((WorkingUnit)activ).isWorking;
+                    string _model = queue[0].Model.Name;
+                    string _name = queue[0].Name;
+                    double _speed = ((WorkingUnit)activ).Speed;
 
-                        Coordinates _parkingPos = queue[0].ParkingPos;
-                        Coordinates _workingPos = queue[0].WorkingPos;
+                    Coordinates _parkingPos = queue[0].ParkingPos;
+                    Coordinates _workingPos = queue[0].WorkingPos;
 
-                        Console.WriteLine("Construction of the thread..., it takes :" + _buildTime);
-                        Thread.Sleep(TimeSpan.FromSeconds(_buildTime));
+                    OnStatusChanged(new StatusChangedEventArgs("Starting construction of robots ", queue[0], null));
 
-                        Console.WriteLine("End of construction");
-                        TestingUnit unit = new TestingUnit(_buildTime, _isWorking, _model, _name, _speed, _parkingPos, _workingPos);
+                    UnitStatusChanged += HandleCustomEvent;
 
-                        Console.WriteLine("Adding unit to storage");
-                        storage.Add(unit);
+                    Console.WriteLine("Construction of the unit..., it takes :" + _buildTime);
+                    Thread.Sleep(TimeSpan.FromSeconds(_buildTime));
 
-                        Console.WriteLine("Unit " + unit.name + " added to storage");
-                        queue.Remove(queue[0]);
+                    Console.WriteLine("End of construction");
+                    TestingUnit unit = new TestingUnit(_buildTime, _isWorking, _model, _name, _speed, _parkingPos, _workingPos);
 
-                        //OnStatusChanged(new StatusChangedEventArgs("Starting construction of robots", null, unit));
-                    }
-                });
+                    Console.WriteLine("Adding unit to storage");
+                    storage.Add(unit);
 
-                thread.Name = "machine";
-                thread.Start();
+                    Console.WriteLine("Unit " + unit.name + " added to storage");
+                    queue.Remove(queue[0]);
 
-                //OnStatusChanged(new StatusChangedEventArgs("Construction of robots is done", queue[0], null));
+                    Console.WriteLine("unit removed from the queue");
 
-                Console.WriteLine("End of construction");
+                    OnStatusChanged(new StatusChangedEventArgs("Adding the unit to the storage ", null, unit));
 
-            }
-
-            else
-            {
-                Console.Write("We cannot add any robot,  storage is full");
+                }
             }
         }
-*/
+
+                    
+
+        /*
+                private void ConstructingUnitAndAddToStorage()
+                {
+                    Console.Write("Construction en cours");
+                    //OnStatusChanged(new StatusChangedEventArgs("Starting construction of robots", queue[0], null));
+                    if (storage.Count < queueCapacity)
+                    {
+                        Thread thread = new Thread(() =>
+                        {
+                            while (queue.Count != 0)
+                            {
+                                Object activ = Activator.CreateInstance(queue[0].Model);
+                                double _buildTime = ((WorkingUnit)activ).BuildTime;
+                                bool _isWorking = ((WorkingUnit)activ).isWorking;
+                                string _model = queue[0].Model.Name;
+                                string _name = queue[0].Name;
+                                double _speed = ((WorkingUnit)activ).Speed;
+
+                                Coordinates _parkingPos = queue[0].ParkingPos;
+                                Coordinates _workingPos = queue[0].WorkingPos;
+
+                                Console.WriteLine("Construction of the thread..., it takes :" + _buildTime);
+                                Thread.Sleep(TimeSpan.FromSeconds(_buildTime));
+
+                                Console.WriteLine("End of construction");
+                                TestingUnit unit = new TestingUnit(_buildTime, _isWorking, _model, _name, _speed, _parkingPos, _workingPos);
+
+                                Console.WriteLine("Adding unit to storage");
+                                storage.Add(unit);
+
+                                Console.WriteLine("Unit " + unit.name + " added to storage");
+                                queue.Remove(queue[0]);
+                                //OnStatusChanged(new StatusChangedEventArgs("Starting construction of robots", null, unit));
+                            }
+                        });
+
+                        thread.Name = "machine";
+                        thread.Start();
+
+                        //OnStatusChanged(new StatusChangedEventArgs("Construction of robots is done", queue[0], null));
+                        Console.WriteLine("End of construction");
+                    }
+                    else
+                    {
+                        Console.Write("We cannot add any robot,  storage is full");
+                    }
+                }
+        */
 
         public void AddWorkableUnitToQueue(Type model, string name, Coordinates parkingPos,
         Coordinates workingPos)
         {
-            FactoryQueueElement nesfqe = new FactoryQueueElement();            
+
+            FactoryQueueElement nesfqe = new FactoryQueueElement();
 
             nesfqe.Model = model;
             nesfqe.Name = name;
             nesfqe.ParkingPos = parkingPos;
             nesfqe.WorkingPos = workingPos;
 
-                    if ( queue.Count < storageCapacity - storage.Count && queue.Count < queueCapacity)
-                    {
-                        queue.Add(nesfqe);
-                        Console.WriteLine("L'unité est ajouté à la queue");
-                        //ConstructingUnitAndAddToStorage();
-                        Thread thread = new Thread(constructionThread);
-                        thread.Start();
-                    }
+            if (queue.Count < storageCapacity - storage.Count && queue.Count < queueCapacity)
+            {
 
-                    else
-                    {
-                        Console.WriteLine("L'unité ne peut pas être ajouté car il ne reste plus de place");
-                    }
+                queue.Add(nesfqe);
+                Console.WriteLine("L'unité est ajouté à la queue");
+                //ConstructingUnitAndAddToStorage();
+                Thread thread = new Thread(constructionThread);
+                thread.Start();
 
-                 }
+            }
+
+            else
+            {
+                Console.WriteLine("L'unité ne peut pas être ajouté car il ne reste plus de place");
+            }
+
         }
-
     }
+
+}
 

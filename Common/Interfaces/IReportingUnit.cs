@@ -10,8 +10,7 @@ namespace BotFactory.Interface
 {
     public interface IReportingUnit
     {
-        event EventHandler  UnitStatusChanged;
+        event EventHandler<IStatusChangedEventArgs> UnitStatusChanged;
         void OnStatusChanged(IStatusChangedEventArgs scea);
-        
     }
 }

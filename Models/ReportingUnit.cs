@@ -13,7 +13,6 @@ namespace BotFactory.Models
         private int queueFreeSlots;
         private int storageFreeSlots;
 
-
         public int QueueFreeSlots
         {
             get
@@ -46,7 +45,7 @@ namespace BotFactory.Models
         {
         }
 
-        public event EventHandler UnitStatusChanged;
+        public event EventHandler<IStatusChangedEventArgs> UnitStatusChanged;
 
         public virtual void OnStatusChanged(IStatusChangedEventArgs scea)
         {

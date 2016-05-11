@@ -60,6 +60,7 @@ namespace BotFactory.Models
             }
         }
 
+
         public string Model
         {
             get
@@ -72,6 +73,7 @@ namespace BotFactory.Models
                 model = value;
             }
         }
+
 
         public string Name
         {
@@ -86,6 +88,7 @@ namespace BotFactory.Models
             }
         }
 
+
         public Coordinates ParkingPos
         {
             get
@@ -99,6 +102,7 @@ namespace BotFactory.Models
             }
         }
 
+
         public double Speed
         {
             get
@@ -111,6 +115,7 @@ namespace BotFactory.Models
                 speed = value;
             }
         }
+
 
         public Coordinates WorkingPos
         {
