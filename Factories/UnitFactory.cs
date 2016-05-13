@@ -76,9 +76,7 @@ namespace BotFactory.Factories
                     Coordinates _workingPos = queue[0].WorkingPos;
 
                     OnStatusChanged(new StatusChangedEventArgs("Starting construction of robots ", queue[0], null));
-
-                    UnitStatusChanged += HandleCustomEvent;
-
+                    
                     Console.WriteLine("Construction of the unit..., it takes :" + _buildTime);
                     Thread.Sleep(TimeSpan.FromSeconds(_buildTime));
 
@@ -99,7 +97,8 @@ namespace BotFactory.Factories
             }
         }
 
-                    
+        
+
 
         /*
                 private void ConstructingUnitAndAddToStorage()

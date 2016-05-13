@@ -10,6 +10,7 @@ namespace BotFactory.Models
 {
     public  class StatusChangedEventArgs : EventArgs, IStatusChangedEventArgs
     {
+
         public string newStatus;
         public IFactoryQueueElement firstQE;
         public ITestingUnit testunit;
