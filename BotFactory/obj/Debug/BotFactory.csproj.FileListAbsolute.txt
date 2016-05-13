@@ -1,0 +1,34 @@
+F:\Projects\BotFactory\BotFactory\obj\Debug\MainWindow.g.cs
+F:\Projects\BotFactory\BotFactory\obj\Debug\Pages\FactoryTest.g.cs
+F:\Projects\BotFactory\BotFactory\obj\Debug\Pages\UnitTest.g.cs
+F:\Projects\BotFactory\BotFactory\obj\Debug\App.g.cs
+F:\Projects\BotFactory\BotFactory\obj\Debug\BotFactory_MarkupCompile.cache
+F:\Projects\BotFactory\BotFactory\obj\Debug\BotFactory_MarkupCompile.lref
+F:\Projects\BotFactory\BotFactory\bin\Debug\BotFactory.exe.config
+F:\Projects\BotFactory\BotFactory\bin\Debug\BotFactory.exe
+F:\Projects\BotFactory\BotFactory\bin\Debug\BotFactory.pdb
+F:\Projects\BotFactory\BotFactory\obj\Debug\MainWindow.baml
+F:\Projects\BotFactory\BotFactory\obj\Debug\Pages\FactoryTest.baml
+F:\Projects\BotFactory\BotFactory\obj\Debug\Pages\UnitTest.baml
+F:\Projects\BotFactory\BotFactory\obj\Debug\BotFactory.g.resources
+F:\Projects\BotFactory\BotFactory\obj\Debug\BotFactory.Properties.Resources.resources
+F:\Projects\BotFactory\BotFactory\obj\Debug\BotFactory.csproj.GenerateResource.Cache
+F:\Projects\BotFactory\BotFactory\obj\Debug\BotFactory.exe
+F:\Projects\BotFactory\BotFactory\obj\Debug\BotFactory.pdb
+F:\Projects\BotFactory\BotFactory\obj\Debug\BotFactory.csprojResolveAssemblyReference.cache
+F:\Projects\BotFactory\BotFactory\bin\Debug\Common.dll
+F:\Projects\BotFactory\BotFactory\bin\Debug\Factories.dll
+F:\Projects\BotFactory\BotFactory\bin\Debug\Models.dll
+F:\Projects\BotFactory\BotFactory\bin\Debug\Common.pdb
+F:\Projects\BotFactory\BotFactory\bin\Debug\Factories.pdb
+F:\Projects\BotFactory\BotFactory\bin\Debug\Models.pdb
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\BotFactory\bin\Debug\BotFactory.exe.config
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\BotFactory\obj\Debug\BotFactory.exe
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\BotFactory\obj\Debug\BotFactory.pdb
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\BotFactory\obj\Debug\BotFactory.csprojResolveAssemblyReference.cache
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\BotFactory\obj\Debug\MainWindow.g.cs
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\BotFactory\obj\Debug\Pages\FactoryTest.g.cs
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\BotFactory\obj\Debug\Pages\UnitTest.g.cs
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\BotFactory\obj\Debug\App.g.cs
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\BotFactory\obj\Debug\BotFactory_MarkupCompile.cache
+C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\BotFactory\obj\Debug\BotFactory_MarkupCompile.lref
