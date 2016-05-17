@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BotFactory.Interface
+namespace BotFactory.Common.Interfaces
 {
     public interface IBuildableUnit
     {

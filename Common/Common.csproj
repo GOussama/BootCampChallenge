@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IFactoryQueueElement.cs" />
+    <Compile Include="Interfaces\IReportingFactory.cs" />
     <Compile Include="Interfaces\IWorkingUnit.cs" />
     <Compile Include="Tools\Coordinates.cs" />
     <Compile Include="Interfaces\IBaseUnit.cs" />

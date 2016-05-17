@@ -23,10 +23,10 @@ namespace BotFactory.Pages
 
         public void SetTestingFactory(UnitFactory factory)
         {
-            _dataContext.Builder = factory;
+            _dataContext.Builder = factory; /***** casting *****/
+            //_dataContext.Builder.FactoryProgress += Builder_FactoryProgress;
             _dataContext.Builder.FactoryProgress += Builder_FactoryProgress;
         }
-
 
         private void Builder_FactoryProgress(object sender, System.EventArgs e)
         {
@@ -66,14 +66,20 @@ namespace BotFactory.Pages
                 if (_unitTestPage == null)
                 {
                     _unitTestPage = new UnitTest();
-                    _unitTestPage.SetUnitToTest((ITestableUnit)StorageList.SelectedItem);
+                    //_unitTestPage.SetUnitToTest((ITestableUnit)StorageList.SelectedItem);
+                    _unitTestPage.SetUnitToTest((ITestingUnit)StorageList.SelectedItem);
                     UnitFrame.Navigate(_unitTestPage);
                 }
                 else
                 {
-                    _unitTestPage.SetUnitToTest((ITestableUnit)StorageList.SelectedItem);
+                    //_unitTestPage.SetUnitToTest((ITestableUnit)StorageList.SelectedItem);
+                    _unitTestPage.SetUnitToTest((ITestingUnit)StorageList.SelectedItem);
                 }
             }
         }
     }
 }
+    
+
+
+       

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\BotFactory\obj\Debug\
+C:\Workingspace\BootCampChallenge\BotFactory\obj\Debug\
 BotFactory
 none
 false
 DEBUG;TRACE
-C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\BotFactory\App.xaml
+C:\Workingspace\BootCampChallenge\BotFactory\App.xaml
 3-1892574572
 
-14-1698581725
-161416301289
+14-420016165
+16-1199309171
 MainWindow.xaml;Pages\FactoryTest.xaml;Pages\UnitTest.xaml;
 
-True
+False
 

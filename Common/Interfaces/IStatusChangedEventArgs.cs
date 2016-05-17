@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BotFactory.Interface;
-using Common.Interfaces;
 
-namespace BotFactory.Interface
+
+
+namespace BotFactory.Common.Interfaces
 {
     public interface IStatusChangedEventArgs
     {

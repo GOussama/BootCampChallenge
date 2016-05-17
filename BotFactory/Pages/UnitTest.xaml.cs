@@ -19,7 +19,8 @@ namespace BotFactory.Pages
             DataContext = _unitDataContext;
         }
 
-        public void SetUnitToTest(ITestableUnit unit)
+        //public void SetUnitToTest(ITestableUnit unit)
+        public void SetUnitToTest(ITestingUnit unit)
         {
             _unitDataContext.IBot = unit;
         }
@@ -28,7 +29,7 @@ namespace BotFactory.Pages
         {
             if (_unitDataContext.IBot != null)
             {
-                var response = await _unitDataContext.IBot.WorkingBegins();
+                var response = await _unitDataContext.IBot.WorkBegins();//WorkingBegins();
                 _unitDataContext.Response = response;
                 _unitDataContext.Working = _unitDataContext.IBot.IsWorking;
                 _unitDataContext.CurrentPos = _unitDataContext.IBot.CurrentPos;
@@ -39,7 +40,7 @@ namespace BotFactory.Pages
         {
             if (_unitDataContext.IBot != null)
             {
-                var response = await _unitDataContext.IBot.WorkingEnds();
+                var response = await _unitDataContext.IBot.WorkEnds();//WorkingEnds();
                 _unitDataContext.Response = response;
                 _unitDataContext.Working = _unitDataContext.IBot.IsWorking;
                 _unitDataContext.CurrentPos = _unitDataContext.IBot.CurrentPos;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Common.Interfaces
+namespace BotFactory.Common.Interfaces
 {
    public interface IFactoryQueueElement
     {

@@ -1,23 +1,26 @@
 ﻿using BotFactory.Common.Interfaces;
 using BotFactory.Common.Tools;
-using BotFactory.BaseModels;
+using BotFactory.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
+
 namespace BotFactory.Tools
 {
     public class UnitDataContext : INotifyPropertyChanged
     {
-        private ITestableUnit _ibot = null;
+        //private ITestableUnit _ibot = null;
+        private ITestingUnit _ibot = null;
         private Boolean _response = false;
         private Boolean _working = false;
         private ObservableCollection<String> _reporting = new ObservableCollection<String>();
 
         #region Properties
         
-        public ITestableUnit IBot
+       // public ITestableUnit IBot
+        public ITestingUnit IBot
         {
             get { return _ibot; }
             set

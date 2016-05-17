@@ -4,14 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace BotFactory.Common.Interfaces
 {
-    public interface IEventArgs
-    {  
-         string NewStatus
-        {
-            get;
-            set;
-        }
+    public interface IReportingFactory
+    {
     }
 }

@@ -10,3 +10,15 @@ C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFacto
 C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Test\obj\Debug\Test.exe
 C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Test\obj\Debug\Test.pdb
+C:\Workingspace\BootCampChallenge\Test\bin\Debug\Test.exe.config
+C:\Workingspace\BootCampChallenge\Test\obj\Debug\Test.exe
+C:\Workingspace\BootCampChallenge\Test\obj\Debug\Test.pdb
+C:\Workingspace\BootCampChallenge\Test\bin\Debug\Test.exe
+C:\Workingspace\BootCampChallenge\Test\bin\Debug\Test.pdb
+C:\Workingspace\BootCampChallenge\Test\bin\Debug\Common.dll
+C:\Workingspace\BootCampChallenge\Test\bin\Debug\Factories.dll
+C:\Workingspace\BootCampChallenge\Test\bin\Debug\Models.dll
+C:\Workingspace\BootCampChallenge\Test\bin\Debug\Common.pdb
+C:\Workingspace\BootCampChallenge\Test\bin\Debug\Factories.pdb
+C:\Workingspace\BootCampChallenge\Test\bin\Debug\Models.pdb
+C:\Workingspace\BootCampChallenge\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache

@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BotFactory.Common.Tools;
-using BotFactory.Interface;
+
+using BotFactory.Common.Interfaces;
 
 namespace BotFactory.Models
 {
@@ -18,6 +19,8 @@ namespace BotFactory.Models
         public double speed;
         public Coordinates parkingPos;
         public Coordinates workingPos;
+
+        public event EventHandler UnitStatusChanged;
 
         public TestingUnit() { 
 
@@ -128,6 +131,29 @@ namespace BotFactory.Models
             {
                 workingPos = value;
             }
+        }
+
+        public Coordinates CurrentPos
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public Task<bool> WorkBegins()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> WorkEnds()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -7,13 +7,15 @@ namespace BotFactory.Tools
 {
     public class DataContext : INotifyPropertyChanged
     {
-        private ITestableUnit _ibot = null;
+        //private ITestableUnit _ibot = null;
+        private ITestingUnit _ibot = null;
         private Boolean _response = false;
         private Boolean _working = false;
 
         #region Properties
         
-        public ITestableUnit IBot
+        //public ITestableUnit IBot
+        public ITestingUnit IBot
         {
             get { return _ibot; }
             set { SetField(ref _ibot, value, nameof(IBot)); }

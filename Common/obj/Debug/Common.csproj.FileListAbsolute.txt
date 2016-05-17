@@ -3,3 +3,8 @@ C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFacto
 C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Common\obj\Debug\Common.dll
 C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Common\obj\Debug\Common.pdb
 C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Workingspace\BootCampChallenge\Common\bin\Debug\Common.dll
+C:\Workingspace\BootCampChallenge\Common\bin\Debug\Common.pdb
+C:\Workingspace\BootCampChallenge\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Workingspace\BootCampChallenge\Common\obj\Debug\Common.dll
+C:\Workingspace\BootCampChallenge\Common\obj\Debug\Common.pdb

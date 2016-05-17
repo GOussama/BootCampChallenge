@@ -6,11 +6,23 @@ using System.Threading.Tasks;
 
 
 
-namespace BotFactory.Interface
+namespace BotFactory.Common.Interfaces
 {
     public interface IReportingUnit
     {
         event EventHandler<IStatusChangedEventArgs> UnitStatusChanged;
+      
         void OnStatusChanged(IStatusChangedEventArgs scea);
+
+         int QueueFreeSlots
+        {
+            get;
+            set;
+        }
+         int StorageFreeSlots
+        {
+            get;
+            set;
+        }
     }
 }

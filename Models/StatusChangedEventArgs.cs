@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BotFactory.Interface;
-using Common.Interfaces;
+using BotFactory.Common.Interfaces;
 
 namespace BotFactory.Models
 {

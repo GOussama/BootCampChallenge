@@ -1,10 +1,11 @@
-﻿using System;
+﻿using BotFactory.Common.Tools;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BotFactory.Interface
+namespace BotFactory.Common.Interfaces
 {
     public interface IBaseUnit
     {
@@ -20,5 +21,10 @@ namespace BotFactory.Interface
             set;    
         }
 
+        Coordinates CurrentPos
+        {
+            get;
+            set;
+        }
     }
 }

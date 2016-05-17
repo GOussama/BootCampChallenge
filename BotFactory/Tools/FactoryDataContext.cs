@@ -17,10 +17,12 @@ namespace BotFactory.Tools
         }
 
         public String Name { get; set; }
-        
-        private IFactory _builder;
 
-        public IFactory Builder
+        private IUnitFactory _builder;
+       // private IFactoryQueueElement _builder;
+
+        public IUnitFactory Builder
+       
         {
             get
             {
@@ -106,7 +108,8 @@ namespace BotFactory.Tools
             }
         }
 
-        public List<ITestableUnit> Storage
+        //public List<ITestableUnit> Storage
+        public List<ITestingUnit> Storage
         {
             get
             {

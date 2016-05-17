@@ -1,11 +1,11 @@
-﻿using BotFactory.Common.Tools;
-using BotFactory.Interface;
+﻿using BotFactory.Common.Interfaces;
+using BotFactory.Common.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Common.Interfaces;
+
 
 namespace BotFactory.Factories
 {

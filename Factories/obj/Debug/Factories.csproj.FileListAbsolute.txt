@@ -7,3 +7,12 @@ C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFacto
 C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Factories\obj\Debug\Factories.csprojResolveAssemblyReference.cache
 C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Factories\obj\Debug\Factories.dll
 C:\Users\Formateur-C17\Documents\Visual Studio 2015\Projects\BotFactory\BotFactory\Factories\obj\Debug\Factories.pdb
+C:\Workingspace\BootCampChallenge\Factories\bin\Debug\Factories.dll
+C:\Workingspace\BootCampChallenge\Factories\bin\Debug\Factories.pdb
+C:\Workingspace\BootCampChallenge\Factories\bin\Debug\Common.dll
+C:\Workingspace\BootCampChallenge\Factories\bin\Debug\Models.dll
+C:\Workingspace\BootCampChallenge\Factories\bin\Debug\Common.pdb
+C:\Workingspace\BootCampChallenge\Factories\bin\Debug\Models.pdb
+C:\Workingspace\BootCampChallenge\Factories\obj\Debug\Factories.csprojResolveAssemblyReference.cache
+C:\Workingspace\BootCampChallenge\Factories\obj\Debug\Factories.dll
+C:\Workingspace\BootCampChallenge\Factories\obj\Debug\Factories.pdb
